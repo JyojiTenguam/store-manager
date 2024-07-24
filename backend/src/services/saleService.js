@@ -13,7 +13,21 @@ const getSaleId = async (id) => {
   return sale;
 };
 
+const createSale = async (itemsSold) => {
+  if (!Array.isArray(itemsSold)) {
+    throw new Error('itemsSold must be an array');
+  }
+
+  const saleId = await saleModel.createSale(itemsSold);
+
+  return {
+    id: saleId,
+    itemsSold,
+  };
+};
+
 module.exports = {
   getSales,
   getSaleId,
+  createSale,
 };

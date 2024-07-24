@@ -8,7 +8,7 @@ chai.use(require('sinon-chai'));
 
 describe('Product Controller', function () {
   describe('getAllProducts', function () {
-    it('should return all products', async function () {
+    it('Deve retornar todos os produtos', async function () {
       const req = {};
       const res = {
         status: sinon.stub().returnsThis(),
@@ -31,7 +31,7 @@ describe('Product Controller', function () {
   });
 
   describe('getProductById', function () {
-    it('should return a product by id', async function () {
+    it('Deve retornar produto por id', async function () {
       const req = { params: { id: 1 } };
       const res = {
         status: sinon.stub().returnsThis(),
@@ -49,7 +49,7 @@ describe('Product Controller', function () {
       productService.getProductById.restore();
     });
 
-    it('should return 404 if product not found', async function () {
+    it('Deve retornar erro 404 se o produto não for encontrado', async function () {
       const req = { params: { id: 99 } };
       const res = {
         status: sinon.stub().returnsThis(),

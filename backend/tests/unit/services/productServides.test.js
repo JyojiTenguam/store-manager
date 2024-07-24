@@ -5,7 +5,7 @@ const productService = require('../../../src/services/productService');
 
 describe('Product Service', function () {
   describe('getAllProducts', function () {
-    it('should return all products', async function () {
+    it('Deve retornar todos os produtos', async function () {
       const mockProducts = [
         { id: 1, name: 'Product 1' },
         { id: 2, name: 'Product 2' },
@@ -24,7 +24,7 @@ describe('Product Service', function () {
   });
 
   describe('getProductById', function () {
-    it('should return a product by id', async function () {
+    it('Deve retornar produto por id', async function () {
       const mockProduct = { id: 1, name: 'Product 1' };
 
       sinon.stub(productModel, 'getProductById').resolves(mockProduct);
@@ -37,7 +37,7 @@ describe('Product Service', function () {
       productModel.getProductById.restore();
     });
 
-    it('should return an error if product not found', async function () {
+    it('Deve retornar um erro caso produto não for encontrado', async function () {
       sinon.stub(productModel, 'getProductById').resolves(undefined);
 
       const product = await productService.getProductById(999);
@@ -51,7 +51,7 @@ describe('Product Service', function () {
   });
 
   describe('createProduct', function () {
-    it('should create a new product', async function () {
+    it('Deve criar um novo produto', async function () {
       const mockProduct = { name: 'New Product' };
       const mockCreatedProduct = { id: 1, name: 'New Product' };
 

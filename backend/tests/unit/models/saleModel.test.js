@@ -18,7 +18,7 @@ describe('saleModel', function () {
   });
 
   describe('findSales', function () {
-    it('should return a list of sales', async function () {
+    it('Deve retornar a lista de vendas', async function () {
       const fakeSales = [
         { saleId: 1, date: '2024-07-23T00:00:00.000Z', productId: 1, quantity: 10 },
         { saleId: 1, date: '2024-07-23T00:00:00.000Z', productId: 2, quantity: 5 },
@@ -40,7 +40,7 @@ describe('saleModel', function () {
   });
 
   describe('findSaleById', function () {
-    it('should return sale by id', async function () {
+    it('Deve retornar venda por id', async function () {
       const fakeSale = [
         { date: '2024-07-23T00:00:00.000Z', productId: 1, quantity: 10 },
         { date: '2024-07-23T00:00:00.000Z', productId: 2, quantity: 5 },

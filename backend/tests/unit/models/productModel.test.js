@@ -5,7 +5,7 @@ const productModel = require('../../../src/models/product');
 
 describe('Product Model', function () {
   describe('getAllProducts', function () {
-    it('should return all products', async function () {
+    it('Deve retornar todos os produtos', async function () {
       const mockProducts = [
         { id: 1, name: 'Product 1' },
         { id: 2, name: 'Product 2' },
@@ -24,7 +24,7 @@ describe('Product Model', function () {
   });
 
   describe('getProductById', function () {
-    it('should return a product by id', async function () {
+    it('Deve retornar produtos por id', async function () {
       const mockProduct = { id: 1, name: 'Product 1' };
 
       sinon.stub(connection, 'execute').resolves([[mockProduct]]);
@@ -39,7 +39,7 @@ describe('Product Model', function () {
   });
 
   describe('create', function () {
-    it('should create a new product', async function () {
+    it('Deve criar um novo produto', async function () {
       const mockProduct = { name: 'New Product' };
       const mockResult = { insertId: 1 };
 
