@@ -2,6 +2,7 @@ const express = require('express');
 
 const productController = require('./controllers/productsController');
 const saleController = require('./controllers/salesController');
+const { validateProduct } = require('./middlewares/productValidation');
 
 const app = express();
 
@@ -18,6 +19,6 @@ app.get('/products/:id', productController.getProductById);
 app.get('/sales', saleController.getAllSales);
 app.get('/sales/:id', saleController.getSaleById);
 
-app.post('/products', productController.createProduct);
+app.post('/products', validateProduct, productController.createProduct);
 
 module.exports = app;
