@@ -21,6 +21,9 @@ app.get('/sales', saleController.getAllSales);
 app.get('/sales/:id', saleController.getSaleById);
 
 app.post('/products', validateProduct, productController.createProduct);
+
 app.post('/sales', validateSale, saleController.createSale);
+
+app.put('/products/:id', validateProduct, productController.updateProductById);
 
 module.exports = app;
